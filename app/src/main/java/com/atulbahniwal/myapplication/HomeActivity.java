@@ -78,6 +78,7 @@ public class HomeActivity extends AppCompatActivity {
                 customDialog();
             }
         });
+
     }
 
     private void customDialog(){
@@ -145,7 +146,6 @@ public class HomeActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-
         FirebaseRecyclerOptions<Data> options = new FirebaseRecyclerOptions.Builder<Data>()
                 .setQuery(mDatabase, Data.class)
                 .build();
@@ -167,11 +167,17 @@ public class HomeActivity extends AppCompatActivity {
                 View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_data, viewGroup, false);
                 return new MyViewHolder(v);
             }
+
         };
         recyclerView.setAdapter(adapter);
         adapter.startListening();
 
+
     }
+
+
+
+
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -212,7 +218,6 @@ public class HomeActivity extends AppCompatActivity {
 
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed() { }
 
-    }
 }
